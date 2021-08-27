@@ -1,0 +1,87 @@
+import FreeCAD
+import Draft
+import datetime
+import libAsm4 as Asm4
+
+from fractions import Fraction
+from typing import List
+
+
+def Partlist(object,level=0,tab=None):
+	forbbox = ('PartDesign::Body', 'Part::Feature', 'Part::FeaturePython')
+	indent = '_'*level
+	if object == None:
+		return {}
+	if tab == None:
+		tab = {}
+	if object.TypeId=='App::Link':
+		print(indent+object.Label+' -> '+object.LinkedObject.Document.Name+'#'+object.LinkedObject.Label+' => '+object.LinkedObject.FullName)
+		Partlist(object.LinkedObject,level+1,tab)
+	else:
+		print(indent+object.Label+' ('+object.TypeId+')')
+		if object.TypeId=='App::Part':
+			print (indent+str(level))
+			if level > 0:
+				if object.FullName in tab:
+					tab[object.FullName]['Qty.'] = tab[object.FullName]['Qty.'] + 1
+				else:
+					tab[object.FullName] = {}
+					tab[object.FullName]['Qty.'] = 1
+					for prop in Asm4.partInfo:
+						tab[object.FullName][prop] = getattr(object,prop)
+					'''tab[object.FullName]["var"] = {} '''
+
+			'''# look for Variables
+			if object.Document.getObject( 'Variables' ):
+				print(indent+'  Variables:')
+				vars = object.Document.getObject( 'Variables' )
+				for prop in vars.PropertiesList:
+					if vars.getGroupOfProperty(prop)=='Variables' :
+						propValue = vars.getPropertyByName(prop)
+						print(indent+'	'+prop+' = '+str(propValue))
+						if not object.FullName in tab:
+							tab[object.FullName] = {}
+							tab[object.FullName]['fullname'] = object.FullName
+							tab[object.FullName]["var"] = {}
+						tab[object.FullName]["var"][prop] = str(propValue) '''
+			# look for sub-objects
+			for objname in object.getSubObjects():
+				subobj = object.Document.getObject( objname[0:-1] )
+				Partlist(subobj,level+1, tab)
+	return tab
+
+def CreateBOM(model):
+	document = FreeCAD.ActiveDocument
+	plist = Partlist(model)
+	if len(plist) == 0:
+		return
+
+	if not hasattr(document, 'Spreadsheet015'):
+		spreadsheet = document.addObject('Spreadsheet::Sheet','Spreadsheet015')
+	else:
+		spreadsheet = document.Spreadsheet015
+
+	spreadsheet.Label = "BOM"
+	spreadsheet.clearAll()
+
+	def wrow(drow: List[str], row: int):
+		for i, d in enumerate(drow):
+			spreadsheet.set(str(chr(ord('a') + i)).upper()+str(row+1), str(d))
+	
+	for i, (_,data) in enumerate(plist.items(), start=1):
+		wrow(data.keys(),0)
+		wrow(data.values(),i)
+
+def main():
+	document = FreeCAD.ActiveDocument
+	model = document.getObject("Model")
+	if model == None:
+		model = document.getObject("Part")	
+
+	CreateBOM(model)
+
+	document.recompute()
+
+
+if __name__ == '__main__':
+	main()

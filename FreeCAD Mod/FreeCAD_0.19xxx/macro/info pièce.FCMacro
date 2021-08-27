@@ -1,0 +1,116 @@
+###Macro pour automatisation des Informations liées à la pièce
+###et la compatibilité labête de l'atelier paysan [greg]
+###Nom de la pièce
+###Désignation
+###Longueur
+###Angle 1
+###Angle 2
+###Diamètre des troues
+
+###Création de la variable de la pièce
+barre=App.ActiveDocument.getObject('Pad')
+profile=App.ActiveDocument.getObject('Sketch')
+###Recuperation des variables de la pièce
+test=0
+try :
+	ep= float(profile.getDatum('epaisseur'))
+	test+=1
+	temp=int(ep)
+	if ep==temp:
+		ep=int(ep)
+	ep=str(ep)
+except NameError:
+	test=test
+try :
+	lar= float(profile.getDatum('largeur'))
+	test+=1
+	temp=int(lar)
+	if lar==temp:
+		lar=int(lar)
+	lar=str(lar)
+except NameError:
+	test=test
+try :
+	hau= float(profile.getDatum('hauteur'))
+	test+=1
+	temp=int(hau)
+	if hau==temp:
+		hau=int(hau)
+	hau=str(hau)
+except NameError:
+	test=test
+try :
+	conge= float(profile.getDatum('conge'))
+	test+=1
+except NameError:
+	test=test
+try :
+	dia= float(profile.getDatum('diametre'))
+	test+=1
+	temp=int(dia)
+	if dia==temp:
+		dia=int(dia)
+	dia=str(dia)
+except NameError:
+	test=test
+
+### Déduction du profile
+
+if test==1:
+	descri="fer rond "+" Ø "+dia
+if test==2:
+	try :
+		descri="Tube rond "+dia+" x "+ep
+	except NameError:
+		descri="étiré plat "+lar+" x "+ep
+if test==3:
+	try:
+		if hau==lar:
+			descri="Tube carré "+hau+" x "+ep
+		else:
+			descri="Tube rectangulaire "+hau+" x "+lar+" x "+ep
+	except NameError:
+		descri="fer plat "+lar+" x "+ep
+if test==0:
+	print("le profile n'a pas était déterminé : contrainte non nomées")
+
+###Création de la variable de percage si elle existe
+try:
+	troue=App.ActiveDocument.getObject('Hole')
+	sktroue=troue.OutList[0]
+	troue1= str(len(App.ActiveDocument.getObject(sktroue.Name).Geometry))+" x D : "+str(troue.Diameter)
+except AttributeError:
+	troue1=""
+try:
+	angle1=str(App.ActiveDocument.getObject('Groove').Angle.Value)
+except AttributeError:
+	angle1=""
+try:
+	angle2=str(App.ActiveDocument.getObject('Groove001').Angle.Value)
+except AttributeError:
+	angle2=""
+
+###Recuperation des variables
+nom="'"+App.ActiveDocument.Label
+longueur=float(barre.Length)
+temp=int(longueur)
+if longueur==temp:
+	longueur=int(longueur)
+longueur=str(longueur)
+
+
+###Ecriture des parametre dans le fichier #PARTINFO# existant
+App.ActiveDocument._PARTINFO_.set('B1', nom)
+App.ActiveDocument._PARTINFO_.set('B2', descri)
+App.ActiveDocument._PARTINFO_.set('B3', angle1)
+App.ActiveDocument._PARTINFO_.set('B4', angle2)
+App.ActiveDocument._PARTINFO_.set('B5', troue1)
+App.ActiveDocument._PARTINFO_.set('B6', longueur)
+
+###Actualisation
+App.ActiveDocument.getObject('_PARTINFO_').setBackground('B1:B7', (0.850980,0.850980,0.850980,1.000000))
+App.ActiveDocument.recompute()
+
+###Affichage du résultat
+check=nom+" - "+descri+" - "+longueur+" mm"
+print (check)

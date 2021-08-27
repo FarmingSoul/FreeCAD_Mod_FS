@@ -1,0 +1,107 @@
+--------------------------
+- FreeCAD Mod FS  v0.002 -
+--------------------------
+
+Pour suivre les balbutiement de FarmingSoul vers une utilisation
+de FreeCAD compatible avec le fonctionnement de 
+la Coopérative L’Atelier Paysan.
+
+Pour l’instant ce Mod consiste à :
+----------------------------------
+-Installation des modules d’assemblage modifiés pour produire 
+des nomenclature propre à L’Atelier Paysan.
+-Installation du module FastenersWB pour ce qui est de la boulonnerie.
+-Installation du ‘Template’ actuellement utilisé pour les plans 
+sortie de FarmingSoul.
+Il vous sera utile pour ouvrir les plans conçu par FarmingSoul et
+vous pouvez aussi le copier et le personnalisé pour votre utilisation .
+Il est une rapide copie du fond de plan de L’Atelier Paysan .
+PS : il vous est conseillez de le mettre en ‘Template’ par défaut 
+( FreeCAD->Edition->Préférence->TechDraw->Template par défaut )
+-Copie des Macro utilisé et peu être des test en cours
+PS : vous devez les placer dans votre dossier actuelle de Macro ou
+indiquer a FreeCAD que maintenant ce sera celui ci
+(FreeCAD->Edition->Préférence->Général->Macro->Chemin de la macro)
+
+Installation :
+--------------
+-Ouvrez le dossier ‘FreeCAD_0.19xxx’
+-Déplacer les 3 dossiers (data-macro-Mod) 
+dans votre dossier racine de FreeCAD
+-PS : il vous est conseillez de le mettre en ‘Template’ par défaut 
+( FreeCAD->Edition->Préférence->TechDraw->Template par défaut )
+-PS : vous devez les placer dans votre dossier actuelle de Macro ou
+indiquer a FreeCAD que maintenant ce sera celui ci
+(FreeCAD->Edition->Préférence->Général->Macro->Chemin de la macro)
+-------------------
+Installation fini !
+
+*****************************************************************************
+Il n’y a pour l’instant aucune doc d’utilisation elles viendront à la suite .
+Vous pouvez néanmoins commencer à expérimenter .
+
+Amusez vous bien !
+*****************************************************************************
+
+Et pour la moindre question n’hésitez pas : 
+---------------------------------
+**** contact@farmingsoul.org ****
+---------------------------------
+
+
+███████╗ █████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗ ██████╗ ███████╗ ██████╗ ██╗   ██╗██╗         ██████╗ ██████╗  ██████╗ 
+██╔════╝██╔══██╗██╔══██╗████╗ ████║██║████╗  ██║██╔════╝ ██╔════╝██╔═══██╗██║   ██║██║        ██╔═══██╗██╔══██╗██╔════╝ 
+█████╗  ███████║██████╔╝██╔████╔██║██║██╔██╗ ██║██║  ███╗███████╗██║   ██║██║   ██║██║        ██║   ██║██████╔╝██║  ███╗
+██╔══╝  ██╔══██║██╔══██╗██║╚██╔╝██║██║██║╚██╗██║██║   ██║╚════██║██║   ██║██║   ██║██║        ██║   ██║██╔══██╗██║   ██║
+██║     ██║  ██║██║  ██║██║ ╚═╝ ██║██║██║ ╚████║╚██████╔╝███████║╚██████╔╝╚██████╔╝███████╗██╗╚██████╔╝██║  ██║╚██████╔╝
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                                    
+                                    ˆ^!>=uu±444Ÿ4f>^                                                
+                             ^øãMÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑØ“                                            
+                         =ãÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ4!                                         
+                     ^4ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑŠ“                                      
+                    ÅÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÅø                                   
+                  >ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑØ                                 
+                  ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ?                               
+                 ÊÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑM                              
+                >ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ-                            
+                ?ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ^                           
+             ^^ !ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑu                           
+            -Ñ?føÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑN                           
+            ØÑˆ  ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÊ                           
+           ´? Ø>“fÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ                           
+          ´ã Ø+   ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÅã4u+!^         Ê                           
+          ˆM >=   ØÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑMŠø“          ´ ˆ      =     !+^                   
+           ã ˆ±    ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑN±?             4ÑÑÑÑÑÑN“   N    Ÿf u                   
+           ± ?Ÿ     4ÊMÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑŸ?                “ÑÑÑÑf!´ “ØÊfÑ´ø±  Ñ ´ø                   
+           ?ˆ!Ñ          !±ÊNŸÅÑÑÑÑÑM?                    ÑÑÑã        -  ø  ´Å Ÿ                    
+           -> u             ?NÑÑÑÑf ?=+     +?            ÑÑÑ“          ÑÑ   Ñã                     
+           !?->           øÑÑÑNÑÑÑã   uØ  ˆM“              ŠÑÑ±^       >Ñ   ã´?“      ^´            
+           ^“!-         ´ÑÑÑÑŸ ŸÑÑ?   !Ê  Ø´                 >NÑÑÑÑÑN      -Ñf!-  >uu+ !ŸÊN>        
+           +´“ˆ        !ÑÑÑÑ+  4ÑŸ    ã=  Ñ             ˆu´         u            NŸ“     ˆ4Ñf       
+             +         ŸÑø     Ø!     Ñ  -Ê          ““ ?Ÿ“         f           ã     =f±>          
+       +4?u^?-         ˆ      ^±     ØŸ  ˆÑ>f4Ÿ±ˆ    Ø4´NŠ          Š          +=    u±       ˆ´    
+       Ê   ØŠ                !Ø      Ê   >M     Ê!      ??          !u        ˆÑ^    øN=?^´øf±Ñ+    
+      uˆ   ø                 ˆ       N   Š=      ã                   u     =4Ÿø        ?=+=  “Ø     
+     ´u   ?ˆ                4       ´Š   -4      =f>               øÑ“ ´>+>                         
+     ´ŠŠŸMø                ˆÑ       ^±    “Ñ!     Ñ!4+             +^=+!         ^-u+ˆ      ?-      
+        ±ø                 Ø ?=++ˆ   u!     M“     >uØ=ØÑ! =´^    ±+         -=øø!  ˆ>>=+?^>        
+         ?±ããØ+ˆ           f     “øøø >ø     Ê444       -=fÅãÊˆãN´Ñ      -uff!                      
+               >Ÿ+?“      “!         ?=fÑ±=ˆ    ã±MŠ=?        ^ !±^  ´===-                          
+                    !+?ˆ-ˆÑÑØã±^         ^+ÊMu    >> 4NfØ?øøf“±±´ “uu>                              
+                         -ˆ   ´uøø=-          >=?       u ±ˆ u ã+fˆ                                 
+                                   !uuu“      >ø±±u“        >=>                                     
+                                       -=uŸøuø´    ˆ=>!    ø=                                       
+                                      uf+!         !!!“f+ˆ ã>u!                                     
+                                  ´±4f         ^>Š±      -?^  “±±=´                                 
+                      !!!      “?!!         >??ˆ  ^u±f=>          =f4f^                             
+                  +±ØØ=!±Ø4u=+“´        =øu!            =ŸØ±-         +4±±?                         
+                !Ÿ                  ?uø=                    +±Š4?         ?f±±=^                    
+                u   +=^          +++ˆ                           ˆ=uø>          ?uøøu=u              
+               Ø-4Ø=ˆ !^      ˆŸ=                                   ˆ±ŠØ?          ´^Å              
+              fN=       !     4“                                        ?u4Ÿ=´     =Ñ               
+                       uã    ˆø                                              =ãŠø?^^Ê               
+                   ˆ!>fˆ    =Ñ                                                   ´fø                
+                  ŸÑÑã?>+=±Ø“                                                                       
+                      ^?“                                                                           
+                                                                                                    

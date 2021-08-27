@@ -1,0 +1,9 @@
+La copie des fichiers a bien été effectuée
+
+Veuillez lire le fichier documentation.txt
+afin de finir d'intégrer le Mod à votre 
+version actuelle de FreeCAD
+
+Encore merci .
+
+FarmingSoul.org

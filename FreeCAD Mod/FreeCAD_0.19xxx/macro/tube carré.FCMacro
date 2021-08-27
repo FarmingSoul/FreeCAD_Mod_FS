@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+
+# Macro Begin: C:\Users\Lenov\Desktop\drive\farmingsoul\freecad\macro\tube carr�.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
+import FreeCAD
+import PartDesign
+import PartDesignGui
+import a2p_partinformation
+
+# Gui.runCommand('Std_DlgMacroRecord',0)
+### Begin command Std_Open
+FreeCAD.openDocument('C:/Users/Lenov/Desktop/drive/farmingsoul/freecad/cr\xe9ation barre/tube.FCStd')
+# App.setActiveDocument("tube")
+# App.ActiveDocument=App.getDocument("tube")
+# Gui.ActiveDocument=Gui.getDocument("tube")
+### End command Std_Open
+App.ActiveDocument.recompute()
+App.getDocument('tube').recompute()
+App.getDocument('tube').getObject('Sketch').setDatum('largeur',App.Units.Quantity('40.000000 mm'))
+App.getDocument('tube').getObject('Sketch').setDatum('hauteur',App.Units.Quantity('35.000000 mm'))
+App.getDocument('tube').getObject('Sketch').setDatum('epaisseur',App.Units.Quantity('2.000000 mm'))
+App.ActiveDocument.recompute()
+App.getDocument('tube').recompute()
+# Gui.Selection.clearSelection()
+
+### Begin command PartDesign_Pad
+Gui.getDocument('tube').ActiveView.setActiveObject('pdbody',App.getDocument('tube').getObject('Body'),'')
+App.getDocument('tube').getObject('Body').newObject('PartDesign::Pad','Pad')
+App.getDocument('tube').getObject('Pad').Profile = App.getDocument('tube').getObject('Sketch')
+App.getDocument('tube').getObject('Pad').Length = 300.000000
+App.ActiveDocument.recompute()
+### End command PartDesign_Pad
+App.ActiveDocument.recompute()
+### Begin command Std_SaveAs
+# Gui.SendMsgToActiveView("SaveAs")
+App.getDocument("tube").saveAs(u"C:/Users/Lenov/Desktop/drive/farmingsoul/freecad/cr\xe9ation barre/N4.FCStd")
+### End command Std_SaveAs
+### Begin patch info pièce
+Gui.runCommand('a2p_CreatePartInformationSheet_Command',0)
+Gui.runCommand('Std_Macro_1',0)
+### End patch info pièce
+### Begin command Std_SaveAs
+# Gui.SendMsgToActiveView("SaveAs")
+App.ActiveDocument.save()
+### End command Std_SaveAs
+App.closeDocument("tube")
+print ("impeccable")
+# App.setActiveDocument("")
+# App.ActiveDocument=None
+# Gui.ActiveDocument=None
+# Macro End: C:\Users\Lenov\Desktop\drive\farmingsoul\freecad\macro\tube carr�.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
