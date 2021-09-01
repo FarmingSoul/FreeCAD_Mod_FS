@@ -23,8 +23,8 @@ InfoBeforeFile=C:\Users\utilisateur\Desktop\FreeCAD Mod\1-install.txt
 InfoAfterFile=C:\Users\utilisateur\Desktop\FreeCAD Mod\2-install.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\utilisateur\Desktop\FreeCAD Mod
-OutputBaseFilename=FreeCADModFSv.{#MyAppVersion}
+OutputDir=C:\Users\utilisateur\Documents\GitHub\FreeCAD_Mod_FS\FreeCAD_Mod_FS
+OutputBaseFilename=FreeCADModFS
 SetupIconFile=C:\Users\utilisateur\Desktop\FreeCAD Mod\FCFS.ico
 Compression=lzma
 SolidCompression=yes
