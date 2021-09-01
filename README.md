@@ -60,7 +60,6 @@ indiquer a FreeCAD que maintenant ce sera celui ci
 
 * Ouvrez le dossier ‘FreeCAD_0.19xxx’ ou ‘FreeCAD_0.20xxx’
 * Déplacer les 3 dossiers (data-macro-Mod) dans votre dossier racine de FreeCAD
-![2](https://user-images.githubusercontent.com/65253765/130835346-80a4b13c-de2e-40e2-8b6f-2f7972a26d57.png)
 * PS : il vous est conseillez de le mettre en ‘Template’ par défaut 
 ( FreeCAD->Edition->Préférence->TechDraw->Template par défaut )
 * PS : vous devez les placer dans votre dossier actuelle de Macro ou
