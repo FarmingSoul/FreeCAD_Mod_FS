@@ -10,6 +10,10 @@ la Coopérative L’Atelier Paysan et potentiellement d'autres structures
 tournées vers l'auto-construction et l'open source peuvent voir un intérêt 
 à travailler leurs 3D et leurs plans avec un logiciel open-source.
 
+# L'Idée en schémas
+
+![garphprincipe-fr](https://user-images.githubusercontent.com/65253765/133437160-09bd76d4-487a-4572-ae74-fd83b733c055.jpg)
+
 # Pour l’instant ce Mod consiste à :
 
 * Installation des modules d’assemblage AS2+ et Asm4 modifiés pour produire 
